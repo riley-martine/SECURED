@@ -31,8 +31,8 @@ const paths = {
 		dest: 'dist/img'
 	},
 	views: {
-		all: 'src/views/**/*',
-		src: ['src/views/*.pug', 'src/views/henlo/*.pug'],
+		all: 'src/views/**/*', // Refresh on updates to anything in views
+		src: ['src/views/*.pug', 'src/views/*.html'], // Pages to generate
 		base: 'src/views/',
 		dest: 'dist'
 	},
