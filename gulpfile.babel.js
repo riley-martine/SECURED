@@ -2,27 +2,33 @@
 
 import gulp from 'gulp';
 import del from 'del';
+import notify from 'gulp-notify';
+import merge from 'merge-stream';
+
 import browserSync from 'browser-sync';
 var server = browserSync.create();
+
 import sass from 'gulp-sass';
 import sassLint from 'gulp-sass-lint';
 import cleanCSS from 'gulp-clean-css';
 import autoprefixer from 'gulp-autoprefixer';
-import sourcemaps from 'gulp-sourcemaps';
+import uncss from 'gulp-uncss';
+
 import htmlmin from 'gulp-htmlmin';
 import pug from 'gulp-pug';
 import puglint from 'gulp-pug-lint';
-import notify from 'gulp-notify';
+
 import imagemin from 'gulp-imagemin';
 
 
 const paths = {
 	scripts: {
-		src: 'src/scripts/*.js',
+		lib: 'src/lib/scripts/*.js', // The only scripts we use come from someone else
 		dest: 'dist/scripts/'
 	},
 	styles: {
 		src: 'src/scss/**/*.scss',
+		lib: 'src/lib/css/*.css',
 		dest: 'dist/css'
 	},
 	images: {
@@ -50,17 +56,22 @@ var sassOptions = {
 };
 
 gulp.task('sass', () => {
-	return gulp.src(paths.styles.src)
+	var css = gulp.src([paths.styles.src])
 		.pipe(sassLint())
 		.pipe(sassLint.format())
-		.pipe(sourcemaps.init())
 		.pipe(sass(sassOptions)).on('error', sass.logError)
-		.pipe(autoprefixer())
+		.pipe(autoprefixer());
+	
+	
+	var lib = gulp.src(paths.styles.lib);
+
+	return merge(css, lib)
+		.pipe(uncss({
+			html: ['dist/**/*.html']}))
 		.pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + details.stats.originalSize);
             console.log(details.name + ': ' + details.stats.minifiedSize);
         }))
-		.pipe(sourcemaps.write('maps'))
 		.pipe(gulp.dest(paths.styles.dest))
 		.pipe(browserSync.stream({match: '**/*.css'})); // CSS glob allows for streaming w/ sourcemaps
 });
@@ -83,7 +94,8 @@ gulp.task('images', () => {
 		.pipe(gulp.dest(paths.images.dest));
 });
 
-gulp.task('compile', gulp.series('clean', gulp.parallel('sass','pug','images')), (done) => {
+gulp.task('compile', gulp.series('clean', gulp.parallel('sass','pug')), (done) => {
+	// Does not default to doing images because that takes too long
 	done();
 })
 
