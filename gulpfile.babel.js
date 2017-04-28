@@ -33,7 +33,6 @@ const paths = {
 	},
 	images: {
 		src: 'src/img/**/*.*',
-		base: 'src/img/',
 		dest: 'dist/img'
 	},
 	views: {
@@ -89,7 +88,7 @@ gulp.task('pug', () => {
 });
 
 gulp.task('images', () => {
-	return gulp.src(paths.images.src, {base: paths.images.base})
+	return gulp.src(paths.images.src)
 		.pipe(imagemin())
 		.pipe(gulp.dest(paths.images.dest));
 });
