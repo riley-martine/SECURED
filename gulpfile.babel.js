@@ -115,7 +115,7 @@ gulp.task('serve', gulp.series('compile', serve))
 
 gulp.task('watch', () => {
 	gulp.watch(paths.styles.src, gulp.series('sass', reload));
-	gulp.watch(paths.views.all, gulp.series('pug', reload));
+	gulp.watch(paths.views.all, gulp.series('pug', 'sass', reload));
 	gulp.watch(paths.images.src, gulp.series('images', reload));
 })
 
