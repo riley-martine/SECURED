@@ -1,5 +1,8 @@
 extends templates/layout.pug
 
+block styles
+	link(rel="stylesheet" href="css/btn-hex.css")
+
 block content
 	div.container-fluid
 		div.card.contact-form
@@ -15,4 +18,4 @@ block content
 					div.form-group
 						label(for="message") Your Message:
 						textarea.form-control(name="message" id="message" rows="3")
-					button.btn.btn-primary(type="submit") Submit
+					button.btn-hex.slateblue(type="submit") Submit
