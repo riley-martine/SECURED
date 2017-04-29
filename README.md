@@ -10,3 +10,4 @@ This is the repo that generates a static site for NCSSM SECURED. It uses scss, p
 
 ## TODO
 1. Make bootstrap.js etc local deps
+2. Make seperate dist and dev targets
