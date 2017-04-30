@@ -1,13 +1,25 @@
+$bg-color: #ebebeb;
+
 body {
-  background: #ebebeb;
+  background: $bg-color;
   text-align: center;
 }
 
 .navbar {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .main {
   margin: 0;
   padding: 0;
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+
+.contact-form {
+  width: 30vw;
+}
+
+.logo-big {
+  max-width: 90vw;
 }
