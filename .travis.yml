@@ -9,7 +9,7 @@ install:
 
 before_script:
   - npm install -g gulp
-
+  - npm install --save-dev babel-core
 script:
   - gulp compile
 
