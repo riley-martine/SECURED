@@ -1,5 +1,7 @@
 # SECURED
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f8633b803c2140829ff3b2f8ad95fc8c)](https://www.codacy.com/app/rmartine/SECURED?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ncssmSECURED/SECURED&amp;utm_campaign=Badge_Grade)
+
 This is the repo that generates a static site for NCSSM SECURED. It uses scss, pug, gulp, and babel.
 
 
