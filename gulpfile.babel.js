@@ -68,12 +68,12 @@ gulp.task('sass', () => {
    // .pipe(uncss({
    //   html: ['dist/**/*.html']
    // }))
-    .pipe(cleanCSS({
-      debug: true
-    }, function(details) {
-      console.log(details.name + ': ' + details.stats.originalSize);
-      console.log(details.name + ': ' + details.stats.minifiedSize);
-    }))
+   // .pipe(cleanCSS({
+   //   debug: true
+   // }, function(details) {
+   //   console.log(details.name + ': ' + details.stats.originalSize);
+   //   console.log(details.name + ': ' + details.stats.minifiedSize);
+   // }))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream({
       match: '**/*.css'
