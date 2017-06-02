@@ -2,6 +2,8 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f8633b803c2140829ff3b2f8ad95fc8c)](https://www.codacy.com/app/rmartine/SECURED?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ncssmSECURED/SECURED&amp;utm_campaign=Badge_Grade)
 
+[![Build Status](https://travis-ci.org/ncssmSECURED/SECURED.svg?branch=master)](https://travis-ci.org/ncssmSECURED/SECURED)
+
 This is the repo that generates a static site for NCSSM SECURED. It uses scss, pug, gulp, and babel.
 
 You can view the site at [ncssmsecured.github.io](https://ncssmsecured.github.io)
