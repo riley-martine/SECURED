@@ -4,6 +4,7 @@
 
 This is the repo that generates a static site for NCSSM SECURED. It uses scss, pug, gulp, and babel.
 
+You can view the site at [ncssmsecured.github.io](ncssmsecured.github.io)
 
 ## Install instructions
 1. clone the repository
