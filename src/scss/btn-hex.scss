@@ -6,6 +6,7 @@ $btn-text-hover-color: #fff;
   border: 0;
   box-sizing: initial;
   color: $btn-color !important;
+  cursor: pointer;
   display: block;
   font-size: 15px;
   height: 60px;
@@ -15,6 +16,7 @@ $btn-text-hover-color: #fff;
   text-align: center;
   text-decoration: none !important;
   text-transform: uppercase;
+  // transition: 0.5s;
   width: 200px;
   z-index: 9999;
 
@@ -25,6 +27,7 @@ $btn-text-hover-color: #fff;
     left: 0;
     width: 200px;
     z-index: -1;
+    transition: 0.5s;
   }
 
   &::before {
@@ -42,14 +45,44 @@ $btn-text-hover-color: #fff;
     transform: perspective(15px) rotateX(-5deg);
   }
 
-  &:hover {
-    color: $btn-text-hover-color !important;
-
-    &::after,
-    &::before {
-      background: $btn-color;
-    }
+  &:focus{
+    outline: none;
   }
 
+  // &:hover {
+  //   color: $btn-text-hover-color !important;
+  //   transition: 0.5s;
+  //
+  //   &::after,
+  //   &::before {
+  //     background: $btn-color;
+  //     transition: 0.5s;
+  //   }
+  // }
+
+  & span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  & span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+  }
+
+  &:hover span {
+    padding-right: 15px;
+  }
+
+  &:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 }

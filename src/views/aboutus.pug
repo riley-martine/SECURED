@@ -1,0 +1,27 @@
+extends templates/layout.pug
+
+block content
+  div.container-fluid
+    h1 The Story of SECURED
+    p SECURED was started by students that were personally by infectious diseases and consequently appalled at the lack of attention infectious diseases receive. Utilizing the STEM-centered environment of NCSSM, Shiv Patel and Vibhu Ambil reached out to fellow students to develop a board of directors for SECURED. Working alongside George Dimitrov, Shrey Patel, Adam Gogal, and Bhavana Ambil, they were able to found SECURED, a nonprofit organization dedicated to advancing the fight against infectious and lesser-known diseases through awareness, fundraising, and research.
+
+  div.biographies.container
+    -
+      var bios = [
+        // Executive officers
+        ["Shiv Patel", "spatel.png", "Shiv is co-founder and co-president of SECURED. He currently attends the North Carolina School of Science and Mathematics in Durham, NC. Shiv hopes that SECURED will continue to be a leader in global health awareness and support."],
+        ["Vibhu Ambil", "vambil.jpg", "Vibhu Ambil is the co-founder/co-president of SECURED inc. He was inspired to make a change in infectious diseases after being severely affected with dengue fever. He currently attends the North Carolina School of Science and Mathematics in Durham. Vibhu hopes that SECURED will one day be on the forefront of fighting infectious diseases."],
+        ["George Dimitrov", "gdimitrov.jpg", "George Dimitrov helped support SECURED while it was being developed by contributing thoughtful ideas. He spends a lot of time diversifying his knowledge through everything he does. George hopes for the organization to grow into an impactful organization which will change the lives of countless individuals around the world in the fight against infectious diseases."],
+        // Board Members
+        ["Gracie Joo", "gjoo.jpg", "Gracie Joo is currently a student at the North Carolina School of Science and Math. As someone passionate for the advancement of global  health, she was honored to join in on an effort to support, educate, and find cures for infectious diseases. She is also the founder of NET Academy,  a non-profit tutoring program for refugee children and a co-leader of the UNICEF club at NCSSM. Her hobbies include playing piano, photography, and watching movies!"],
+        ["Jessica Chen", "jchen.jpg", "Jessica Chen is currently attending the North Carolina School of Science and Math. As someone who strongly believes in hard work and determination, she was thrilled to become a board member of SECURED, and to lead this organization towards its goals for infectious diseases. She is also an active member in other nonprofits and organizations, and in her pastime she enjoys dancing and playing viola."],
+
+      ]
+
+    each bio in bios
+      div.bio
+        div.picture
+          img(src="img/bio/" + bio[1])
+        div.about
+          h2= bio[0]
+          p= bio[2]
