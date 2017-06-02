@@ -21,6 +21,7 @@ cache:
       - "node_modules"
 
 deploy:
+  - mv dist/* .
   provider: pages
   skip_cleanup: true
   repo: ncssmSECURED/ncssmSECURED.github.io
