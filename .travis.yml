@@ -21,9 +21,11 @@ cache:
       - "node_modules"
 
 deploy:
+  - mv dist/* .
   provider: pages
   skip_cleanup: true
   repo: ncssmSECURED/ncssmSECURED.github.io
+  target_branch: master
   github_token: $GITHUB_TOKEN
   on:
     branch: master
