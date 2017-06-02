@@ -4,7 +4,7 @@ block styles
 	link(rel="stylesheet" href="css/btn-hex.css")
 
 block content
-	div.container-fluid
+	div.container-fluid.no-pad
 		div.card.contact-form
 			div.card-block
 				h4.card-title Contact Us
@@ -18,4 +18,5 @@ block content
 					div.form-group
 						label(for="message") Your Message:
 						textarea.form-control(name="message" id="message" rows="3")
-					button.btn-hex.slateblue(type="submit") Submit
+					button.btn-hex.slateblue(type="submit")
+						span Submit
