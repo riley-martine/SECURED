@@ -16,12 +16,17 @@ before_script:
 script:
   - gulp compile
   - gulp images
+  - rm README.md
+  - rm -rf src/
+  - rm .gitignore
+  - rm .babelrc
+  - rm .travis.yml
+  - rm gulpfile.babel.js
   - mv dist/* .
 
 cache:
   directories:
       - "node_modules"
-      - "img"
 
 deploy:
   provider: pages

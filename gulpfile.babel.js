@@ -65,9 +65,9 @@ gulp.task('sass', () => {
   var lib = gulp.src(paths.styles.lib);
 
   return merge(css, lib)
-    .pipe(uncss({
-      html: ['dist/**/*.html']
-    }))
+   // .pipe(uncss({
+   //   html: ['dist/**/*.html']
+   // }))
     .pipe(cleanCSS({
       debug: true
     }, function(details) {
