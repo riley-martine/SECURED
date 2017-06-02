@@ -65,15 +65,15 @@ gulp.task('sass', () => {
   var lib = gulp.src(paths.styles.lib);
 
   return merge(css, lib)
-   // .pipe(uncss({
-   //   html: ['dist/**/*.html']
-   // }))
-   // .pipe(cleanCSS({
-   //   debug: true
-   // }, function(details) {
-   //   console.log(details.name + ': ' + details.stats.originalSize);
-   //   console.log(details.name + ': ' + details.stats.minifiedSize);
-   // }))
+    .pipe(uncss({
+      html: ['dist/**/*.html']
+    }))
+    .pipe(cleanCSS({
+      debug: true
+    }, function(details) {
+      console.log(details.name + ': ' + details.stats.originalSize);
+      console.log(details.name + ': ' + details.stats.minifiedSize);
+    }))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream({
       match: '**/*.css'
@@ -106,7 +106,7 @@ gulp.task('images', () => {
     .pipe(gulp.dest(paths.images.dest));
 });
 
-gulp.task('compile', gulp.series(gulp.parallel('sass', 'pug')), (done) => {
+gulp.task('compile', gulp.series(gulp.series('pug', 'sass')), (done) => {
   // Does not default to doing images because that takes too long
   done();
 });
