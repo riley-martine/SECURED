@@ -1,7 +1,7 @@
-$bg-color: #bfbabe;
-$cure-red: #a63e14;
-$accent-light: #f1f2f0;
+$bg-color: #f1f2f0;
+$accent-color: #bfbabe;
 $text-color: #558a86;
+$cure-red: #a63e14;
 
 body {
   background: $bg-color;
@@ -19,7 +19,7 @@ img {
 }
 
 .navbar {
-  background-color: $accent-light;
+  background-color: $accent-color;
   color: $text-color;
   margin-bottom: 20px;
 
@@ -57,7 +57,7 @@ img {
 }
 
 .contact-form {
-  background-color: $accent-light;
+  background-color: $accent-color;
   width: 30vw;
 }
 
